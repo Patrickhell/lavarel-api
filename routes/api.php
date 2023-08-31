@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/albums', [ApiAlbumsController::class, 'index'])->name('api.albums.index');
+//qui si può usare sia lo ($slug che il $album) perché si è usato nel model Album il getRouteKeyName()
+Route::get('/albums/{album}', [ApiAlbumsController::class, 'show'])->name('api.albums.show');

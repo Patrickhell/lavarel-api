@@ -21,6 +21,11 @@ class Album extends Model
         'image'
     ];
 
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
     public function albumType()
     {
         return $this->belongsTo(AlbumType::class);

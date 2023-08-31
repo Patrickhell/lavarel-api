@@ -8,6 +8,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
+                        <th scope="col" class="text-center"> CATEGORY</th>
                         <th scope="col">SINGER NAME'S</th>
                         <th scope="col">TITLE</th>
                         <th scope="col">SLUG</th>
@@ -21,6 +22,9 @@
                     <tr>
                         <th>
                             {{$album->id}}
+                        </th>
+                        <th class="text-center">
+                            {{ $album->albumType->name}}
                         </th>
                         <td>
                             {{$album->singer_name}}

@@ -29,6 +29,7 @@ class AlbumSeeder extends Seeder
         ];
 
         $album_types = AlbumType::all();
+        $technologyIds = Technology::all()->pluck('id')->toArray();
 
 
         for ($i = 0; $i < 30; $i++) {
@@ -43,6 +44,8 @@ class AlbumSeeder extends Seeder
             $newAlbum->save();
             $newAlbum->slug = Str::of("$$newAlbum->id " . $newAlbum->title)->slug('-');
             $newAlbum->save();
+
+            $newAlbum->technologies()->sync([$faker->randomElement($technologyIds), $faker->randomElement($technologyIds), $faker->randomElement($technologyIds)]);
         }
     }
 }

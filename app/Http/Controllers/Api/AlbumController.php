@@ -11,7 +11,7 @@ class AlbumController extends Controller
     public function index()
     {
 
-        $albums = Album::with('technologies', 'albumType')->paginate(6);
+        $albums = Album::with('technologies', 'albumType')->paginate(8);
         return response()->json([
             'success' => true,
             'results' => $albums
